@@ -1,0 +1,12 @@
+$background: rgb(0, 0, 0);
+$primary: #fff;
+$secondary: #8e8e8e;
+
+$green: rgb(10, 65, 27);
+$emerald: rgb(101, 245, 137);
+
+:root {
+  --background: #{$background};
+  --primary: #{$primary};
+  --secondary: #{$secondary};
+}
