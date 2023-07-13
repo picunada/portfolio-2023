@@ -39,7 +39,7 @@ export default class Sketch {
 
     this.controls = new OrbitControls(this.camera, this.renderer.domElement)
 
-    this.time.animate(delta => this.animate(delta))
+    this.time.animate(() => this.animate())
 
     setTimeout(() => this.loaded.value = true, 2000)
 
@@ -69,9 +69,7 @@ export default class Sketch {
     this.camera.updateProjectionMatrix()
   }
 
-  private animate(delta: number) {
-    // this.controls.update()
-    // this.renderer.render(this.scene, this.camera)
+  private animate() {
     this.composer.render()
     this.gradient.animate()
   }

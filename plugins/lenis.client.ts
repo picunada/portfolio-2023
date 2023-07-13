@@ -1,7 +1,7 @@
 import Lenis from '@studio-freight/lenis'
 
 export default defineNuxtPlugin(() => {
-  const { $gsap, $router } = useNuxtApp()
+  const { $router } = useNuxtApp()
 
   const lenis = new Lenis({
     // duration: 1.2,
@@ -13,14 +13,6 @@ export default defineNuxtPlugin(() => {
     lenis.raf(time)
     window.requestAnimationFrame(raf)
   }
-
-  // lenis.on('scroll', ScrollTrigger.update)
-
-  // $gsap.ticker.add((time) => {
-  //   lenis.raf(time * 1000)
-  // })
-
-  // $gsap.ticker.lagSmoothing(0)
 
   window.requestAnimationFrame(raf)
 

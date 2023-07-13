@@ -69,8 +69,12 @@ watch(route, () => {
 </script>
 
 <template>
-  <div :class="cursorClasses"
-    :style="{ transform: `translate(${Math.round((outputX - (size / 2)))}px, ${Math.round((outputY - (size / 2)) + 1)}px)`, width: `${size}px`, height: `${size}px` }" />
+  <div :class="cursorClasses" :style="{
+    transform: `translate(${Math.round((outputX - (size / 2)))}px,
+         ${Math.round((outputY - (size / 2)) + 1)}px)`,
+    width: `${size}px`,
+    height: `${size}px`,
+  }" />
 </template>
 
 <style lang="scss" scoped>

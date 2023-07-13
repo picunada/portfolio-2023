@@ -26,6 +26,8 @@ watch(preloaded, (v) => {
 
 onMounted(() => {
   const app = new Sketch(canvas.value as HTMLCanvasElement)
+
+  return app
 })
 </script>
 

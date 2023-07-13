@@ -1,8 +1,4 @@
 <script setup lang="ts">
-const props = defineProps<{
-  type?: 'opacity'
-}>()
-
 const { $gsap } = useNuxtApp()
 
 const reveal = ref<HTMLDivElement>()

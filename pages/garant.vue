@@ -4,11 +4,13 @@ import { drawImageProp } from '@/utils/draw-image'
 const { $gsap, $lenis } = useNuxtApp()
 
 const frameCount = 43
+const loadedCount = ref(0)
 
 const animation = ref({
   frame: 0,
 })
 const preloaded = useState('loaded')
+const imageLoaded = ref(false)
 const canvas = ref<HTMLCanvasElement>()
 const images = ref<HTMLImageElement[]>([])
 
@@ -18,47 +20,57 @@ async function loadImages() {
   for (let i = 0; i < frameCount; i++) {
     const img = new Image()
     img.src = currentFrame(i)
+    img.onload = () => loadedCount.value++
     images.value.push(img)
   }
 }
 
-onMounted(async () => {
-  await loadImages()
+watch(loadedCount, (v) => {
+  if (v === frameCount) {
+    imageLoaded.value = true
+    preloaded.value = true
+  }
+})
 
-  preloaded.value = true
-
-  $lenis.options.infinite = false
-
-  canvas.value!.width = window.innerWidth
-  canvas.value!.height = window.innerHeight
-
-  const context = canvas.value!.getContext('2d')
-
-  $gsap.to(animation.value, {
-    frame: frameCount - 1,
-    snap: 'frame',
-    ease: 'none',
-    duration: 1.9,
-    onUpdate: render,
-    onComplete: () => {
-      $gsap.to('.arrow', {
-        opacity: 1,
-      })
-    },
-  })
-
-  images.value[0].onload = render
-
-  function render() {
-    const img = images.value[animation.value.frame]
-    const offsetX = 0.5 // center x
-    const offsetY = 0.5 // center y
+watch(imageLoaded, (v) => {
+  if (v) {
     canvas.value!.width = window.innerWidth
     canvas.value!.height = window.innerHeight
 
-    context?.clearRect(0, 0, canvas.value!.width, canvas.value!.height)
-    drawImageProp(context!, img, 0, 0, window.innerWidth, window.innerHeight, offsetX, offsetY)
+    const context = canvas.value!.getContext('2d')
+
+    $gsap.to(animation.value, {
+      frame: frameCount - 1,
+      snap: 'frame',
+      ease: 'none',
+      duration: 2.2,
+      onUpdate: render,
+      onComplete: () => {
+        $gsap.to('.arrow', {
+          opacity: 1,
+        })
+      },
+    })
+
+    images.value[0].onload = render
+
+    function render() {
+      const img = images.value[animation.value.frame]
+      const offsetX = 0.5 // center x
+      const offsetY = 0.5 // center y
+      canvas.value!.width = window.innerWidth
+      canvas.value!.height = window.innerHeight
+
+      context?.clearRect(0, 0, canvas.value!.width, canvas.value!.height)
+      drawImageProp(context!, img, 0, 0, window.innerWidth, window.innerHeight, offsetX, offsetY)
+    }
   }
+})
+
+onMounted(async () => {
+  await loadImages()
+
+  $lenis.options.infinite = false
 })
 
 onUnmounted(() => {
