@@ -43,7 +43,7 @@ watch(imageLoaded, (v) => {
       frame: frameCount - 1,
       snap: 'frame',
       ease: 'none',
-      duration: 2.2,
+      duration: 1.85,
       onUpdate: render,
       onComplete: () => {
         $gsap.to('.arrow', {
