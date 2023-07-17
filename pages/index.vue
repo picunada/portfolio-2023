@@ -93,25 +93,22 @@
       <div class="project-grid">
         <RevealOnScroll>
           <NuxtLink to="/garant">
-            <div class="project-card mouse-md">
-              garant
-            </div>
+            <div class="project-card garant mouse-md"
+              :style="{ backgroundImage: `url('assets/project-images/garant-calc-hero.jpg')`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }" />
           </NuxtLink>
         </RevealOnScroll>
 
         <RevealOnScroll>
           <NuxtLink to="/portfolio-old">
-            <div class="project-card mouse-md">
-              portfolio-old
-            </div>
+            <div class="project-card mouse-md"
+              :style="{ backgroundImage: `url('assets/project-images/portfolio-old-hero.jpg')`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }" />
           </NuxtLink>
         </RevealOnScroll>
 
         <RevealOnScroll>
           <NuxtLink to="/locker">
-            <div class="project-card mouse-md">
-              locker-ios
-            </div>
+            <div class="project-card locker mouse-md"
+              :style="{ backgroundImage: `url('assets/project-images/locker-hero.jpg')`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }" />
           </NuxtLink>
         </RevealOnScroll>
       </div>
@@ -161,6 +158,10 @@ h3 {
 .text-wrapper {
   font-size: 2rem;
   margin-top: 120px;
+
+  @media only screen and (max-width: 678px) {
+    font-size: 1.2rem;
+  }
 }
 
 .grid {
@@ -173,6 +174,10 @@ h3 {
 
 .about {
   font-size: 1.6rem;
+
+  @media only screen and (max-width: 678px) {
+    font-size: 1rem;
+  }
 }
 
 .experience {
@@ -182,6 +187,10 @@ h3 {
   flex-direction: column;
   align-items: start;
   gap: 16px;
+
+  @media only screen and (max-width: 678px) {
+    font-size: 0.8rem;
+  }
 }
 
 .experience-header {
@@ -224,11 +233,15 @@ h3 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
+
+    @media only screen and (max-width: 678px) {
+      grid-template-columns: auto;
+    }
   }
 
   .project-card {
+    max-width: 100%;
     min-height: 400px;
-    padding: 16px 24px;
     border: solid 1px $primary;
     border-radius: 16px;
     font-size: 2rem;
@@ -236,7 +249,7 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: center;
-
+    overflow: hidden;
   }
 }
 
@@ -253,6 +266,10 @@ h3 {
   font-weight: 600;
   display: flex;
   gap: 16px;
+
+  @media only screen and (max-width: 678px) {
+    font-size: 0.9rem;
+  }
 
   .title {
     color: $secondary;

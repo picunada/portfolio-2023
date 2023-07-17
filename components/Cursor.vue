@@ -1,6 +1,8 @@
 <script setup>
-import { useMouse, watchOnce } from '@vueuse/core'
+import { useMediaQuery, useMouse, watchOnce } from '@vueuse/core'
 import { gsap } from 'gsap'
+
+const isDesktop = useMediaQuery('(min-width: 768px)')
 
 const { x, y } = useMouse({
   type: 'client',
@@ -69,9 +71,9 @@ watch(route, () => {
 </script>
 
 <template>
-  <div :class="cursorClasses" :style="{
+  <div v-if="isDesktop" :class="cursorClasses" :style="{
     transform: `translate(${Math.round((outputX - (size / 2)))}px,
-               ${Math.round((outputY - (size / 2)) + 1)}px)`,
+                       ${Math.round((outputY - (size / 2)) + 1)}px)`,
     width: `${size}px`,
     height: `${size}px`,
   }" />

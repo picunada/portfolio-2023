@@ -1,7 +1,10 @@
 <script setup lang="ts">
+import { useMediaQuery } from '@vueuse/core'
 import { drawImageProp } from '@/utils/draw-image'
 
 const { $gsap, $lenis, $router } = useNuxtApp()
+
+const isMobile = useMediaQuery('(max-width: 678px)')
 
 const frameCount = 120
 const loadedCount = ref(0)
@@ -48,9 +51,11 @@ watch(imageLoaded, (v) => {
       duration: 2,
       onUpdate: render,
       onComplete: () => {
-        $gsap.to('.arrow', {
-          opacity: 1,
-        })
+        if (isMobile) {
+          $gsap.to('.arrow', {
+            opacity: 1,
+          })
+        }
       },
     })
 
@@ -94,7 +99,8 @@ definePageMeta({
     </svg>
   </button>
 
-  <svg class="arrow" width="38" height="156" viewBox="0 0 38 156" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg v-if="!isMobile" class="arrow" width="38" height="156" viewBox="0 0 38 156" fill="none"
+    xmlns="http://www.w3.org/2000/svg">
     <path d="M19 1V155" stroke="white" stroke-width="2" stroke-linecap="round" />
     <path d="M19 155L36 128" stroke="white" stroke-width="2" stroke-linecap="round" />
     <path d="M19 155L2 128" stroke="white" stroke-width="2" stroke-linecap="round" />
@@ -117,6 +123,24 @@ definePageMeta({
             Developer, Designer
           </h5>
         </div>
+        <div class="role--item mouse-sm">
+          <h5 class="item--title">
+            Tools
+          </h5>
+          <div class="tools">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+              <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="m12.146 8.583l-1.3-2.09a1.046 1.046 0 0 0-1.786.017l-5.91 9.908A1.046 1.046 0 0 0 4.047 18H7.96m12.083 0c.743 0 1.201-.843.82-1.505l-4.044-7.013a.936.936 0 0 0-1.638 0l-4.043 7.013c-.382.662.076 1.505.819 1.505h8.086z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                <path d="M8 22L3 3l19 5.5z" />
+                <path d="m12.573 17.58l-6.152-1.576l8.796-9.466l1.914 6.64" />
+                <path d="M12.573 17.58L11 11l6.13 2.179M9.527 4.893L11 11L4.69 9.436z" />
+              </g>
+            </svg>
+          </div>
+        </div>
       </div>
       <RevealOnScroll>
         <div>
@@ -133,61 +157,3 @@ definePageMeta({
     </div>
   </div>
 </template>
-
-<style lang="scss" scoped>
-.image-seq {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-}
-
-.project--header {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 24px;
-}
-
-.project--about {
-  font-size: 1.6rem;
-  font-weight: 500;
-  display: flex;
-  gap: 24px;
-}
-
-.role {
-  min-width: 300px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-
-  .role--item {
-    display: flex;
-    gap: 16px;
-    text-wrap: balance;
-
-    .item--title {
-      color: $secondary;
-    }
-  }
-}
-
-.arrow {
-  position: absolute;
-  opacity: 0;
-  bottom: 50%;
-  right: 0;
-  translate: -48px 50%;
-  z-index: 2;
-  mix-blend-mode: normal;
-}
-
-.back-button {
-  cursor: pointer;
-  position: fixed;
-  color: white;
-  top: 5%;
-  left: 0;
-  translate: 48px 100%;
-  z-index: 2;
-}
-</style>

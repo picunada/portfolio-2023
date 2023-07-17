@@ -1,10 +1,18 @@
 <script setup lang="ts">
+import { useMediaQuery } from '@vueuse/core'
+
+const isMobile = useMediaQuery('(max-width: 678px)')
 </script>
 
 <template>
   <header>
     <div class="header-wrapper">
-      <NuxtLink to="/">
+      <NuxtLink v-if="isMobile" to="/">
+        <div class="logo mouse-sm">
+          Picunada
+        </div>
+      </NuxtLink>
+      <NuxtLink v-else to="/">
         <div class="logo mouse-sm">
           Picunada - Creative Web Developer
         </div>
@@ -44,12 +52,20 @@ header {
   justify-content: space-between;
   padding: 16px 24px;
   width: 100%;
+
+  @media only screen and (max-width: 678px) {
+    padding: 8px 12px;
+  }
 }
 
 .navigation {
   display: flex;
   gap: 24px;
   font-weight: 600;
+
+  @media only screen and (max-width: 678px) {
+    gap: 8px;
+  }
 }
 
 .logo {
