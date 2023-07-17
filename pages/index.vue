@@ -94,21 +94,21 @@
         <RevealOnScroll>
           <NuxtLink to="/garant">
             <div class="project-card garant mouse-md"
-              :style="{ backgroundImage: `url('assets/project-images/garant-calc-hero.jpg')`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }" />
+              :style="{ backgroundImage: `url('/project-images/garant-calc-hero.jpg')`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }" />
           </NuxtLink>
         </RevealOnScroll>
 
         <RevealOnScroll>
           <NuxtLink to="/portfolio-old">
             <div class="project-card mouse-md"
-              :style="{ backgroundImage: `url('assets/project-images/portfolio-old-hero.jpg')`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }" />
+              :style="{ backgroundImage: `url('/project-images/portfolio-old-hero.jpg')`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }" />
           </NuxtLink>
         </RevealOnScroll>
 
         <RevealOnScroll>
           <NuxtLink to="/locker">
             <div class="project-card locker mouse-md"
-              :style="{ backgroundImage: `url('assets/project-images/locker-hero.jpg')`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }" />
+              :style="{ backgroundImage: `url('/project-images/locker-hero.jpg')`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }" />
           </NuxtLink>
         </RevealOnScroll>
       </div>
