@@ -85,45 +85,65 @@
       </div>
     </div>
     <div class="projects-wrapper">
-      <h1 class="mouse-sm">
-        Projects
-      </h1>
+      <RevealOnScroll>
+        <h1 class="mouse-sm">
+          Projects
+        </h1>
+      </RevealOnScroll>
       <div class="project-grid">
-        <NuxtLink to="/garant">
-          <div class="project-card mouse-md">
-            garant
-          </div>
-        </NuxtLink>
+        <RevealOnScroll>
+          <NuxtLink to="/garant">
+            <div class="project-card mouse-md">
+              garant
+            </div>
+          </NuxtLink>
+        </RevealOnScroll>
 
-        <NuxtLink to="/portfolio-old">
-          <div class="project-card mouse-md">
-            portfolio-old
-          </div>
-        </NuxtLink>
+        <RevealOnScroll>
+          <NuxtLink to="/portfolio-old">
+            <div class="project-card mouse-md">
+              portfolio-old
+            </div>
+          </NuxtLink>
+        </RevealOnScroll>
+
+        <RevealOnScroll>
+          <NuxtLink to="/locker">
+            <div class="project-card mouse-md">
+              locker-ios
+            </div>
+          </NuxtLink>
+        </RevealOnScroll>
       </div>
     </div>
     <div class="contacts-wrapper">
-      <h1 class="mouse-sm">
-        Contacts
-      </h1>
-      <div class="contact">
-        <p class="title mouse-sm">
-          email
-        </p>
-        <p class="value mouse-sm">
-          picunada.dev@gmail.com
-        </p>
-      </div>
-      <div class="contact">
-        <p class="title mouse-sm">
-          telegram
-        </p>
-        <a href="https://t.me/picunada" target="_blank">
-          <p class="value mouse-sm">
-            @picunada
+      <RevealOnScroll>
+        <h1 class="mouse-sm">
+          Contacts
+        </h1>
+      </RevealOnScroll>
+      <RevealOnScroll>
+        <div class="contact">
+          <p class="title mouse-sm">
+            email
           </p>
-        </a>
-      </div>
+          <p class="value mouse-sm">
+            picunada.dev@gmail.com
+          </p>
+        </div>
+      </RevealOnScroll>
+      <RevealOnScroll>
+        <div class="contact">
+          <p class="title mouse-sm">
+            telegram
+          </p>
+          <a href="https://t.me/picunada" target="_blank">
+            <p class="value mouse-sm">
+              @picunada
+            </p>
+          </a>
+        </div>
+      </RevealOnScroll>
     </div>
   </div>
   <Hero />

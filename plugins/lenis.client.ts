@@ -4,8 +4,6 @@ export default defineNuxtPlugin(() => {
   const { $router } = useNuxtApp()
 
   const lenis = new Lenis({
-    // duration: 1.2,
-    // easing: t => Math.min(1, 1.001 - 2 ** (-10 * t)), // https://www.desmos.com/calculator/brs54l4xou
     infinite: true,
   })
 
@@ -17,11 +15,10 @@ export default defineNuxtPlugin(() => {
   window.requestAnimationFrame(raf)
 
   $router.afterEach((to, from) => {
-    if (to.path !== from.path) {
-      lenis.scrollTo('#__nuxt', { // your container class or id
+    if (to.path !== from.path && ['/garant', '/portfolio-old', '/locker'].includes(to.path)) {
+      lenis.scrollTo('#__nuxt', {
         offset: 0,
         duration: 0,
-        // easing: () => { },
         immediate: true,
       })
     }

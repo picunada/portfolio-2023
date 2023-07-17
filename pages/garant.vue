@@ -1,9 +1,7 @@
 <script setup lang="ts">
-import { drawImageProp } from '@/utils/draw-image'
+const { $gsap, $lenis, $router } = useNuxtApp()
 
-const { $gsap, $lenis } = useNuxtApp()
-
-const frameCount = 43
+const frameCount = 95
 const loadedCount = ref(0)
 
 const animation = ref({
@@ -14,8 +12,10 @@ const imageLoaded = ref(false)
 const canvas = ref<HTMLCanvasElement>()
 const images = ref<HTMLImageElement[]>([])
 
+const tween = ref<gsap.core.Tween>()
+
 async function loadImages() {
-  const currentFrame = (index: number) => `/_garant_webp/${index + 1}.webp`
+  const currentFrame = (index: number) => `/garant-lottie/00${index + 1 < 10 ? '0' : ''}${index + 1}.webp`
 
   for (let i = 0; i < frameCount; i++) {
     const img = new Image()
@@ -39,11 +39,11 @@ watch(imageLoaded, (v) => {
 
     const context = canvas.value!.getContext('2d')
 
-    $gsap.to(animation.value, {
+    tween.value = $gsap.to(animation.value, {
       frame: frameCount - 1,
       snap: 'frame',
       ease: 'none',
-      duration: 1.85,
+      duration: 1.8,
       onUpdate: render,
       onComplete: () => {
         $gsap.to('.arrow', {
@@ -75,6 +75,7 @@ onMounted(async () => {
 
 onUnmounted(() => {
   $lenis.options.infinite = true
+  tween.value?.kill()
 })
 
 definePageMeta({
@@ -85,11 +86,11 @@ definePageMeta({
 <template>
   <canvas ref="canvas" class="image-seq" />
 
-  <NuxtLink class="mouse-sm" to="/">
-    <svg class="back-button mouse-sm" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+  <button class="back-button mouse-sm" @click="() => $router.go(-1)">
+    <svg class="mouse-sm" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
       <path class="mouse-sm" fill="currentColor" d="M10 22L0 12L10 2l1.775 1.775L3.55 12l8.225 8.225L10 22Z" />
     </svg>
-  </NuxtLink>
+  </button>
 
   <svg class="arrow" width="38" height="156" viewBox="0 0 38 156" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M19 1V155" stroke="white" stroke-width="2" stroke-linecap="round" />
@@ -183,6 +184,7 @@ definePageMeta({
 }
 
 .back-button {
+  cursor: pointer;
   position: fixed;
   color: white;
   top: 5%;

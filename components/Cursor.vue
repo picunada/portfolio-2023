@@ -14,7 +14,7 @@ const outputY = ref(y.value)
 
 // Smoothly move the cursor to the mouse position
 gsap.ticker.add(() => {
-  const dt = 1.0 - (1.0 - 0.3) ** gsap.ticker.deltaRatio()
+  const dt = 1.0 - (1.0 - 0.4) ** gsap.ticker.deltaRatio()
   outputX.value += (x.value - outputX.value) * dt
   outputY.value += (y.value - outputY.value) * dt
 })
@@ -71,7 +71,7 @@ watch(route, () => {
 <template>
   <div :class="cursorClasses" :style="{
     transform: `translate(${Math.round((outputX - (size / 2)))}px,
-         ${Math.round((outputY - (size / 2)) + 1)}px)`,
+               ${Math.round((outputY - (size / 2)) + 1)}px)`,
     width: `${size}px`,
     height: `${size}px`,
   }" />

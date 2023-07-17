@@ -8,6 +8,11 @@ useHead({
     },
   ],
 })
+
+onMounted(() => {
+  if ('scrollRestoration' in window.history)
+    window.history.scrollRestoration = 'auto'
+})
 </script>
 
 <template>

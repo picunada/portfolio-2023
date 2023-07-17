@@ -57,8 +57,8 @@ onMounted(() => {
 <style>
 .canvas-container {
   /* position: absolute; */
-  max-width: 100vw;
-  max-height: 100vh;
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
   top: 0;
   left: 0;
