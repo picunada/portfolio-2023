@@ -85,9 +85,9 @@
     </div>
     <div class="projects-wrapper">
       <RevealOnScroll>
-        <h1 class="mouse-sm">
-          Projects
-        </h1>
+        <h2 class="mouse-sm section-header">
+          projects
+        </h2>
       </RevealOnScroll>
       <div class="project-grid">
         <RevealOnScroll>
@@ -112,20 +112,22 @@
         </RevealOnScroll>
       </div>
     </div>
+    <RevealOnScroll>
+      <h1 class="mouse-sm section-header">
+        contacts
+      </h1>
+    </RevealOnScroll>
     <div class="contacts-wrapper">
-      <RevealOnScroll>
-        <h1 class="mouse-sm">
-          Contacts
-        </h1>
-      </RevealOnScroll>
       <RevealOnScroll>
         <div class="contact">
           <p class="title mouse-sm">
             email
           </p>
-          <p class="value mouse-sm">
-            picunada.dev@gmail.com
-          </p>
+          <a href="mailto:picunada.dev@gmail.com" target="_blank">
+            <p class="value mouse-sm">
+              picunada.dev@gmail.com
+            </p>
+          </a>
         </div>
       </RevealOnScroll>
       <RevealOnScroll>
@@ -241,8 +243,8 @@ h3 {
   .project-card {
     max-width: 100%;
     min-height: 400px;
-    border: solid 1px $primary;
-    border-radius: 16px;
+    //border: solid 1px $primary;
+    //border-radius: 16px;
     font-size: 2rem;
     font-weight: 800;
     display: flex;
@@ -253,15 +255,14 @@ h3 {
 }
 
 .contacts-wrapper {
-  margin-top: 120px;
   margin-bottom: 120px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 8px;
 }
 
 .contact {
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   font-weight: 600;
   display: flex;
   gap: 16px;
@@ -284,5 +285,11 @@ h3 {
       text-decoration-color: $primary;
     }
   }
+}
+
+.section-header {
+  margin-top: 80px;
+  font-size: 1.4rem;
+  color: var(--secondary);
 }
 </style>
