@@ -87,7 +87,7 @@ a {
 }
 
 
-// project 
+// project
 
 .image-seq {
   width: 100vw;
@@ -165,4 +165,22 @@ a {
   @media only screen and (max-width: 678px) {
     translate: 16px 50%;
   }
+}
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+/* we will explain what these classes do next! */
+.spinner-enter-active,
+.spinner-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.spinner-enter-from,
+.spinner-leave-to {
+  opacity: 0;
 }
