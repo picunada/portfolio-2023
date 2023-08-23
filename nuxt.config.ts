@@ -18,7 +18,6 @@ export default defineNuxtConfig({
   css: ['~/assets/main.scss'],
   modules: [
     // Simple usage
-    '@nuxtjs/eslint-module',
     '@nuxtjs/fontaine',
   ],
   imports: {

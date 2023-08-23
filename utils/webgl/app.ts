@@ -41,9 +41,9 @@ export default class Sketch {
 
     this.time.animate(() => this.animate())
 
-    setTimeout(() => this.loaded.value = true, 2000)
-
     window.addEventListener('resize', () => this.resize())
+
+    this.loaded.value = true
   }
 
   private setupRenderer() {
