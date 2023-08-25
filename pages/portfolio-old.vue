@@ -151,14 +151,17 @@ definePageMeta({
         </div>
       </div>
       <RevealOnScroll>
-        <div>
+        <div class="project-description">
           <p class="mouse-sm">
             In my old portfolio project, I leveraged WebGL, Three.js, Nuxt.js, and CSS to create an immersive and visually
-            stunning web experience. By harnessing the power of WebGL, I was able to render 3D graphics directly in the
+            stunning web experience.
+          </p>
+          <p class="mouse-sm">
+            By harnessing the power of WebGL, I was able to render 3D graphics directly in the
             browser, bringing my portfolio to life with smooth animations and interactive elements.
           </p>
           <p class="mouse-sm">
-            I've developed my skills in Three.js and WebGL while creating this.
+            This project helped me to develop my skills in Three.js and WebGL while creating this.
           </p>
         </div>
       </RevealOnScroll>

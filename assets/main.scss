@@ -131,8 +131,9 @@ a {
     }
 
     .item--title {
+      font-size: 0.7em;
       color: $secondary;
-      text-transform: uppercase;
+      text-transform: lowercase;
     }
   }
 }

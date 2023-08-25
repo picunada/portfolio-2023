@@ -152,11 +152,15 @@ definePageMeta({
         </div>
       </div>
       <RevealOnScroll>
-        <div>
+        <div class="project-description">
           <p class="mouse-sm">
             Guarantee calc is a site for calculating bank guarantees for procurement winners is a web-based platform
             specifically designed to assist procurement winners in determining the required amount of bank guarantee for
-            their awarded contracts. This platform aims to streamline the process of calculating and obtaining bank
+            their awarded contracts.
+          </p>
+
+          <p class="mouse-sm">
+            This platform aims to streamline the process of calculating and obtaining bank
             guarantees, which are financial instruments used to provide assurance to the procuring entity that the
             contract
             will be fulfilled as per the agreed terms and conditions.
