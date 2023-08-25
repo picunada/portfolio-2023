@@ -143,16 +143,6 @@ a {
   gap: 16px;
 }
 
-.arrow {
-  position: absolute;
-  opacity: 0;
-  bottom: 50%;
-  right: 0;
-  translate: -48px 50%;
-  z-index: 2;
-  mix-blend-mode: normal;
-}
-
 .back-button {
   cursor: pointer;
   position: fixed;

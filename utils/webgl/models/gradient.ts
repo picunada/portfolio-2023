@@ -10,7 +10,7 @@ export default class Gradient {
 
   constructor() {
     const palette = [
-      new THREE.Color('#085faa'),
+      new THREE.Color('#9021d0'),
       new THREE.Color('#49275d'),
       new THREE.Color('#bc71fe'),
       new THREE.Color('#262626'),
