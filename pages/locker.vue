@@ -49,11 +49,11 @@ watch(imageLoaded, (v) => {
       duration: 1.2,
       onUpdate: render,
       onComplete: () => {
-        if (isMobile) {
-          $gsap.to('.arrow', {
-            opacity: 1,
-          })
-        }
+        $gsap.fromTo('.arrow', {
+          opacity: 0,
+        }, {
+          opacity: 1,
+        })
       },
     })
 
@@ -106,11 +106,8 @@ definePageMeta({
     </svg>
   </button>
 
-  <svg v-if="!isMobile" class="arrow" width="38" height="156" viewBox="0 0 38 156" fill="none"
-    xmlns="http://www.w3.org/2000/svg">
-    <path d="M19 1V155" stroke="white" stroke-width="2" stroke-linecap="round" />
-    <path d="M19 155L36 128" stroke="white" stroke-width="2" stroke-linecap="round" />
-    <path d="M19 155L2 128" stroke="white" stroke-width="2" stroke-linecap="round" />
+  <svg class="arrow mouse-sm" xmlns="http://www.w3.org/2000/svg" width="76" height="76" viewBox="0 0 24 24">
+    <path class="pulse" fill="currentColor" d="M12 14.975q-.2 0-.375-.062T11.3 14.7l-4.6-4.6q-.275-.275-.275-.7t.275-.7q.275-.275.7-.275t.7.275l3.9 3.9l3.9-3.9q.275-.275.7-.275t.7.275q.275.275.275.7t-.275.7l-4.6 4.6q-.15.15-.325.213t-.375.062Z" />
   </svg>
 
   <div class="page">
