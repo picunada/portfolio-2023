@@ -25,12 +25,17 @@ const isMobile = useMediaQuery('(max-width: 678px)')
         </CustomLink>
         <CustomLink link="https://www.linkedin.com/in/daniil-bezuglov-4b1418234/" target="_blank">
           <p class="mouse-sm">
-            Linkedin
+            LinkedIn
           </p>
         </CustomLink>
         <CustomLink link="https://twitter.com/SonzuXlayst" target="_blank">
           <p class="mouse-sm">
             Twitter
+          </p>
+        </CustomLink>
+        <CustomLink link="/resume.pdf" download="Daniil_Bezuglov(@picunada).pdf">
+          <p class="mouse-sm">
+            Resume
           </p>
         </CustomLink>
       </nav>

@@ -7,7 +7,7 @@
     <div class="text-wrapper">
       <RevealOnScroll>
         <h1 class="mouse-lg">
-          Hello, I'm Picunada - a creative Web Developer focused on Frontend and Design.
+          Hello, I'm Picunada - a creative Fullstack Web Developer.
         </h1>
       </RevealOnScroll>
     </div>
@@ -17,20 +17,29 @@
           <p class="mouse-md">
             I&apos;m all about turning ideas <br>
             into vibrant and impactful designs, <br>
-            utilizing the power of WebGL and other frontend tools
+            utilizing the power of WebGL and other frontend tools.
           </p>
         </RevealOnScroll>
       </div>
       <div class="about item-2">
         <RevealOnScroll>
           <p class="mouse-md">
-            Currently on the lookout for exciting job opportunities, <br>
-            I&apos;m constantly expanding my knowledge <br>
-            by creating cutting-edge applications
+            I&apos;m also experienced in backend technologies <br>
+            I've participated in system design of few projects <br>
+            using microservice architecture.
           </p>
         </RevealOnScroll>
       </div>
       <div class="about item-3">
+        <RevealOnScroll>
+          <p class="mouse-md">
+            Currently on the lookout for exciting job opportunities, <br>
+            I&apos;m constantly expanding my knowledge <br>
+            by creating cutting-edge applications.
+          </p>
+        </RevealOnScroll>
+      </div>
+      <div class="about item-4">
         <RevealOnScroll>
           <p class="mouse-md">
             Having spent the past year in Vietnam, <br>
@@ -38,7 +47,7 @@
           </p>
         </RevealOnScroll>
       </div>
-      <div class="about item-4">
+      <div class="about item-5">
         <RevealOnScroll>
           <p class="mouse-md">
             When I&apos;m not immersed in the world of development, <br>
@@ -46,15 +55,28 @@
           </p>
         </RevealOnScroll>
       </div>
-      <div class="experience item-5">
+      <div class="experience item-6">
         <div class="work">
           <RevealOnScroll>
             <div class="experience-header">
               experience
             </div>
+          </RevealOnScroll>
+        </div>
+        <div class="work">
+          <RevealOnScroll>
             <p class="mouse-sm">
-              LOCKERBOT, APR 2021 - FEB 2023 <br>
-              1.5+ YEARS <br>
+              MULTITENDER, APR 2023 - NOW <br>
+              6+ MONTHS <br>
+              SOFTWARE ENGINEER
+            </p>
+          </RevealOnScroll>
+        </div>
+        <div class="work">
+          <RevealOnScroll>
+            <p class="mouse-sm">
+              LOCKERBOT, APR 2021 - APR 2023 <br>
+              2 YEARS <br>
               SOFTWARE ENGINEER
             </p>
           </RevealOnScroll>
@@ -74,6 +96,10 @@
             <div class="experience-header">
               awards
             </div>
+          </RevealOnScroll>
+        </div>
+        <div class="work">
+          <RevealOnScroll>
             <p class="mouse-sm">
               TON Foundation hackathon <br>
               2nd place <br>
@@ -187,7 +213,7 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: start;
-  gap: 16px;
+  gap: 8px;
 
   @media only screen and (max-width: 678px) {
     font-size: 0.8rem;
@@ -220,6 +246,11 @@ h3 {
 }
 
 .item-5 {
+  grid-column: 1/3;
+  grid-row: 5;
+}
+
+.item-6 {
   grid-column: 3/4;
   grid-row: 1/4;
 }
