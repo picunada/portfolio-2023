@@ -4,6 +4,7 @@ import { gsap } from 'gsap'
 const props = defineProps<{
   link?: string
   target?: string
+  download?: string | boolean
 }>()
 
 const link = ref<HTMLDivElement>()
@@ -28,7 +29,7 @@ onMounted(() => {
 
 <template>
   <div ref="link" class="link" @mouseenter="onEnter" @mouseleave="onLeave">
-    <a :href="props.link" :target="props.target">
+    <a :href="props.link" :target="props.target" :download="props.download">
       <slot />
     </a>
   </div>

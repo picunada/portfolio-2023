@@ -7,7 +7,7 @@
     <div class="text-wrapper">
       <RevealOnScroll>
         <h1 class="mouse-lg">
-          Hello, I'm Picunada - a creative Web Developer focused on Frontend and Design.
+          Hello, I'm Picunada - a creative Fullstack Web Developer.
         </h1>
       </RevealOnScroll>
     </div>
